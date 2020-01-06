@@ -3,6 +3,8 @@ package com.vido.moneymanager.view;
 import com.vido.moneymanager.state.State;
 import com.vido.moneymanager.state.StateManager;
 import com.vido.moneymanager.view.category.CategoryState;
+import com.vido.moneymanager.view.category.NewCategoryState;
+import com.vido.moneymanager.view.home.NewTransactionState;
 import com.vido.moneymanager.view.intro.IntroState;
 import com.vido.moneymanager.view.home.HomeState;
 
@@ -81,8 +83,13 @@ public class MainFrame extends JFrame {
     private void initComponents() {
 
         stateManager.add(State.INTRO, new IntroState());
+
         stateManager.add(State.HOME, new HomeState());
+
         stateManager.add(State.CATEGORY, new CategoryState());
+        stateManager.add(State.NEW_CATEGORY, new NewCategoryState());
+
+        stateManager.add(State.NEW_TRANSACTION, new NewTransactionState());
     }
 
     public void open(final State state) {
