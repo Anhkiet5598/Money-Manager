@@ -2,6 +2,7 @@ package com.vido.moneymanager.view;
 
 import com.vido.moneymanager.state.State;
 import com.vido.moneymanager.state.StateManager;
+import com.vido.moneymanager.view.category.CategoryState;
 import com.vido.moneymanager.view.intro.IntroState;
 import com.vido.moneymanager.view.home.HomeState;
 
@@ -69,6 +70,7 @@ public class MainFrame extends JFrame {
         showMenuItem.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                StateManager.getInstance().show(State.CATEGORY);
             }
         });
         categoryMenu.add(showMenuItem);
@@ -80,6 +82,7 @@ public class MainFrame extends JFrame {
 
         stateManager.add(State.INTRO, new IntroState());
         stateManager.add(State.HOME, new HomeState());
+        stateManager.add(State.CATEGORY, new CategoryState());
     }
 
     public void open(final State state) {
